@@ -11,7 +11,7 @@ def get_numbers_ticket(min: int, max: int, quantity: int) -> list:
     Returns:
         A list of random numbers within the specified range.
     """
-    if min >= 1 and max <= 1000:
+    if min >= 1 and max <= 1000 and min <= quantity <= max:
         unique_selected_digits = []
         while len(unique_selected_digits) != quantity:
             selected_digits = random.choices(range(min, max), k=quantity)
@@ -22,5 +22,5 @@ def get_numbers_ticket(min: int, max: int, quantity: int) -> list:
         return []
 
 
-lottery_numbers = get_numbers_ticket(2, 1000, 10)
+lottery_numbers = get_numbers_ticket(2, 1000, 2)
 print(f"Ваші лотерейні числа: {lottery_numbers}")
