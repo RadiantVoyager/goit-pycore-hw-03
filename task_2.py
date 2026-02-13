@@ -14,7 +14,7 @@ def get_numbers_ticket(min: int, max: int, quantity: int) -> list:
     if min >= 1 and max <= 1000 and min <= quantity <= max:
         unique_selected_digits = []
         while len(unique_selected_digits) != quantity:
-            selected_digits = random.choices(range(min, max), k=quantity)
+            selected_digits = random.sample(range(min, max), k=quantity)
             unique_selected_digits = list(set(selected_digits))
         unique_selected_digits.sort()
         return unique_selected_digits
